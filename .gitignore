@@ -5,12 +5,13 @@
 /dist/
 /tmp/
 /out-tsc/
+/coverage/
+/e2e/test-output/
 /.angular/
+/.angular-cli.json
+/.ng/
 /.cache/
 /.sass-cache/
-
-# Test coverage
-/coverage/
 
 # Logs
 *.log
