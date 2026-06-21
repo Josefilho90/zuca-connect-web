@@ -1,0 +1,2 @@
+import { Component,inject } from '@angular/core';import { MetaLojaService } from '../../core/servicos/meta-loja.service';import { CabecalhoPaginaComponent } from '../../shared/componentes/cabecalho-pagina/cabecalho-pagina.component';
+@Component({selector:'app-minhas-metas',imports:[CabecalhoPaginaComponent],templateUrl:'./minhas-metas.component.html',styleUrl:'./loja.component.scss'})export class MinhasMetasComponent{readonly metas=inject(MetaLojaService).obterMetas();}

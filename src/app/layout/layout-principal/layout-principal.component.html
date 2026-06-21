@@ -1,0 +1,16 @@
+<div class="aplicacao" [class.menu-aberto]="menuAberto()">
+  <aside>
+    <a class="marca" [routerLink]="rotaInicial" (click)="fecharMenu()"><span class="simbolo">Z</span><span><strong>Zuca</strong><small>COUROS</small></span></a>
+    <nav>
+      <span class="legenda">MENU PRINCIPAL</span>
+      @for(item of menu();track item.rota){<a [routerLink]="item.rota" routerLinkActive="ativo" (click)="fecharMenu()"><i>{{ item.icone }}</i><span>{{ item.rotulo }}</span></a>}
+    </nav>
+    <div class="usuario-lateral"><div class="avatar">{{ autenticacao.usuarioLogado()?.nome?.charAt(0) }}</div><div><strong>{{ autenticacao.usuarioLogado()?.nome }}</strong><small>{{ autenticacao.usuarioLogado()?.perfil }}</small></div><button title="Sair" (click)="autenticacao.sair()">↪</button></div>
+  </aside>
+  @if(menuAberto()){<button class="fundo-menu" aria-label="Fechar menu" (click)="fecharMenu()"></button>}
+  <section class="corpo">
+    <header class="topo"><button class="hamburguer" aria-label="Abrir menu" (click)="menuAberto.set(!menuAberto())">☰</button><div class="trilha"><span>Zuca Couros</span><b>/</b><strong>Painel</strong></div><div class="acoes"><button title="Notificações">♧<em></em></button><div class="usuario-topo"><span>{{ autenticacao.usuarioLogado()?.nome }}</span><small>{{ autenticacao.usuarioLogado()?.perfil }}</small></div></div></header>
+    <main><router-outlet /></main>
+    <footer>© 2026 Zuca Couros <span>Gestão que acompanha seus passos.</span></footer>
+  </section>
+</div>

@@ -1,0 +1,11 @@
+<main class="login">
+  <section class="painel-marca"><div class="conteudo"><div class="logo-grande"><span>Z</span><div><strong>Zuca</strong><small>COUROS</small></div></div><p class="selo">GESTÃO COM IDENTIDADE</p><h1>Tradição em couro.<br><em>Excelência</em> em gestão.</h1><p>Controle clientes, vendas, catálogo e estoque em uma experiência feita para o seu negócio.</p><div class="decoracao"><i></i><i></i><i></i></div></div><blockquote>“Cada detalhe importa. Da escolha do couro à entrega para o cliente.”</blockquote></section>
+  <section class="painel-formulario"><div class="caixa"><div class="logo-mobile"><span>Z</span><strong>Zuca Couros</strong></div><span class="boas-vindas">BEM-VINDO DE VOLTA</span><h2>Acesse sua conta</h2><p>Entre com suas credenciais para continuar.</p>
+    <form [formGroup]="formulario" (ngSubmit)="entrar()">
+      <label>E-mail ou usuário<div class="campo"><i>✉</i><input formControlName="email" type="email" placeholder="seu@email.com"></div>@if(formulario.controls.email.touched&&formulario.controls.email.invalid){<small>Informe um e-mail válido.</small>}</label>
+      <label>Senha<div class="campo"><i>⌾</i><input formControlName="senha" [type]="mostrarSenha()?'text':'password'" placeholder="••••••••"><button type="button" (click)="mostrarSenha.set(!mostrarSenha())">{{ mostrarSenha()?'◉':'◎' }}</button></div>@if(formulario.controls.senha.touched&&formulario.controls.senha.invalid){<small>A senha deve ter ao menos 6 caracteres.</small>}</label>
+      @if(erro()){<div class="erro">⚠ {{ erro() }}</div>}<button class="entrar" type="submit" [disabled]="carregando()">{{ carregando()?'Entrando...':'Entrar' }} <span>→</span></button>
+    </form>
+    <div class="acessos"><span>Acessos para demonstração</span><button (click)="preencher('owner@zucacouros.com')">FÁBRICA</button><button (click)="preencher('vendedor@zucacouros.com')">VEND. FÁBRICA</button><button (click)="preencher('loja@zucacouros.com')">LOJA</button><button (click)="preencher('vendedor.loja@zucacouros.com')">VEND. LOJA</button></div>
+  </div><footer>© 2026 Zuca Couros · Todos os direitos reservados</footer></section>
+</main>

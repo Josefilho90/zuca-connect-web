@@ -1,0 +1,3 @@
+import { ChangeDetectionStrategy, Component, output } from '@angular/core';
+@Component({selector:'app-campo-busca',template:'<label><span>⌕</span><input type="search" placeholder="Buscar..." (input)="alteracao.emit($any($event.target).value)"></label>',styles:['label{display:flex;align-items:center;gap:.5rem;background:var(--superficie);border:1px solid var(--borda);border-radius:10px;padding:0 .8rem;min-width:min(280px,100%)}span{font-size:1.35rem;color:var(--texto-suave)}input{border:0;background:transparent;padding:.75rem 0;outline:0;width:100%;color:var(--texto)}'],changeDetection:ChangeDetectionStrategy.OnPush})
+export class CampoBuscaComponent{readonly alteracao=output<string>();}

@@ -1,0 +1,1 @@
+.resumo{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1rem}.resumo span,.resumo strong,.resumo small{display:block}.resumo span{font-size:.7rem;color:var(--texto-suave)}.resumo strong{font-size:1.45rem;margin:.5rem 0}.resumo small{font-size:.62rem;color:var(--verde-claro)}@media(max-width:700px){.resumo{grid-template-columns:1fr}}

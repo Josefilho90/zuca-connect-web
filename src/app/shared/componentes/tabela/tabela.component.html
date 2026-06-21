@@ -1,0 +1,1 @@
+<div class="tabela-responsiva"><table><thead><tr>@for(coluna of colunas();track coluna.chave){<th>{{coluna.rotulo}}</th>}</tr></thead><tbody>@for(item of dados();track $index){<tr>@for(coluna of colunas();track coluna.chave){<td>{{item[coluna.chave]}}</td>}</tr>}</tbody></table></div>

@@ -1,0 +1,1 @@
+<article class="indicador" [class.destaque]="destaque()"><div class="topo"><span>{{ titulo() }}</span><i>{{ icone() }}</i></div><strong>{{ valor() }}</strong><small [class.negativo]="variacao()<0">{{ variacao() >= 0 ? '+' : '' }}{{ variacao() }}% <em>vs. mês anterior</em></small></article>
